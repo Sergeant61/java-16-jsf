@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: "Tahoma";
+	font-size: 12px
+}
+
+#content {
+	width: 400px; 
+	background: #EEE;
+	margin: 0px auto;
+}
+
+#registerTable {
+	margin: 0px auto;
+}

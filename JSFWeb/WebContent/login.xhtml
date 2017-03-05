@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Kullanıcı Girişi</title>
+
+	<link rel="stylesheet" href="style/style.css" type="text/css" />
+
+</h:head>
+
+<h:body>
+
+	<div id="content">
+
+		<h:form>
+			<table id="loginTable">
+				<tr>
+					<td>Kullanıcı Adı</td>
+					<td><p:inputText value="#{login.userName}"></p:inputText></td>
+				</tr>
+				<tr>
+					<td>Şifre</td>
+					<td><p:password value="#{login.password}"></p:password></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><p:commandButton value="Giriş" action="#{login.login}" ajax="false" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
+
+</h:body>
+
+</html>

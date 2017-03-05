@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+<h:head>
+	<title>Kullanıcı Kayıt Formu</title>
+
+	<link rel="stylesheet" href="style/style.css" type="text/css" />
+
+</h:head>
+
+<f:event listener="#{login.isLoggedIn}" type="preRenderView" />
+
+<h:body>
+
+	<div id="content">
+	
+		<div id="header">
+			<div style="width: 250px; float: left">Hoşgeldin <h:outputText value="#{login.userName}" /></div>
+			<div style="width: float: left">Sepetinizde <h:outputText id="cartCount" value="#{orderBean.productCount}" /> ürün var.</div>
+			<div style="clear: both" />
+		</div>
+		
+		<div style="background-color: #89b6ff">
+			<table>
+				<tr>
+					<h:form>
+					<c:forEach items="#{productBean.products}" var="product">
+						<td>
+							<div>
+								<div><img width="50" height="50" src="https://www.pirelliotolastik.com/images/products/00/78/37/7837_buyuk.png" /></div>
+								<div><h:outputText value="#{product.name}" /></div>
+								<div><p:commandButton value="Sepete Ekle" id="ajax" update="cartCount" actionListener="#{orderBean.addCart(product)}" styleClass="ui-priority-primary" /></div>
+							</div>
+						</td>
+					</c:forEach>
+					</h:form>
+				</tr>
+			</table>
+		</div>
+	
+	</div>
+	
+</h:body>
+
+</html>
